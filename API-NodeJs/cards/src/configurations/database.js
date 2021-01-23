@@ -7,7 +7,7 @@ if (!neDB) {
         filename: dbName,
         autoload: true
     })
-    console.log(`[Customers Application - ${(new Date()).toISOString()}] This database [${dbName}] is UP`)
+    console.log(`[Card Application - ${(new Date()).toISOString()}] This database [${dbName}] is UP`)
 }
 
 module.exports = neDB

@@ -42,7 +42,7 @@ public class CardController {
     }
 
     @PutMapping("/{id}")
-    public Card alterProduct (@RequestBody Card card, @PathVariable(value = "id") long id) {
+    public Card alterProduct (@RequestBody CSard card, @PathVariable(value = "id") long id) {
         return cardService.alterCardById(card);
     }
 
