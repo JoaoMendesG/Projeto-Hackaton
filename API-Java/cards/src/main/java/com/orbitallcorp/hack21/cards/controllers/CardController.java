@@ -3,7 +3,7 @@ package com.orbitallcorp.hack21.cards.controllers;
 import com.orbitallcorp.hack21.cards.domains.Card;
 import com.orbitallcorp.hack21.cards.services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -47,9 +47,8 @@ public class CardController {
     }
 
     @GetMapping("/paginationAndSorting")
-    public ResponseEntity<Sort> findAllSort(Sort sort) {
-        Iterable<Card> cards = cardService.findAll();
-        return ResponseEntity.ok(sort);
+    public Page<Card> getAllSort() {
+        return cardService.findAllSort();
     }
 
 }
