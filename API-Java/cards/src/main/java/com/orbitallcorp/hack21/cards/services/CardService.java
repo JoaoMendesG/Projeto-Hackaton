@@ -19,7 +19,7 @@ public class CardService {
 
     @Autowired
     private CardRepository cardRepository;
-    
+
     public Card saveCard(Card card) {  //POST
         return cardRepository.save((card));
     }
