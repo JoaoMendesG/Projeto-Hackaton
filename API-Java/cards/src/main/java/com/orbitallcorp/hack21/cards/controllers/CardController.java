@@ -44,4 +44,11 @@ public class CardController {
     public Card alterProduct (@RequestBody Card card, @PathVariable(value = "id") long id) {
         return cardService.alterCardById(card);
     }
+
+    @GetMapping("/paginationAndSorting")
+    public ResponseEntity<Iterable<Card>> findAllSort() {
+        Iterable<Card> cards = cardService.findAll();
+        return ResponseEntity.ok(cards);
+    }
+
 }

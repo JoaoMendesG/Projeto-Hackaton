@@ -2,9 +2,12 @@ package com.orbitallcorp.hack21.cards.services;
 
 import com.orbitallcorp.hack21.cards.domains.Card;
 import com.orbitallcorp.hack21.cards.repositories.CardRepository;
+import net.bytebuddy.TypeCache;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -36,5 +39,9 @@ public class CardService {
     public Card alterCardById(Card card) {
         return cardRepository.save((card));
     };
+
+    public Iterable<Card> findAllSort(Sort sort) {
+        return cardRepository.findAll(sort);
+    }
 
 }
